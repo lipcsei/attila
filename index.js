@@ -86,7 +86,7 @@ const words = [
     "Megérne egy ajtócsapkodást!",
     "Hazudnák, ha azt mondanám",
     "most jól álltok",
-    "oda lehetn érni...",
+    "oda lehetne érni...",
     "gyász vagy, gyász vagy",
     "Én ezt lesszarom",
     "találtam egy bugot",
