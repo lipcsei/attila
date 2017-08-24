@@ -51,7 +51,7 @@ app.get('/oauth', function (req, res) {
 });
 
 app.post('/attila', function (req, res) {
-    res.send(random(words));
+    res.send({response_type: "in_chanel",text:random(words)});
 });
 
 const random = function(items) {return items[Math.floor(Math.random() * items.length)]};
