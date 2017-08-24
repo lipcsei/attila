@@ -96,7 +96,7 @@ const words = [
     "Hívlak",
     "Sosem veszed fel",
     "Olyan bugot találtam, hogy beszarsz",
-    "Android miatt hullik ki a hajam",
+    "az Android miatt hullik ki a hajam",
     "Mikor lesz rilíz",
     "Elkresselt",
     "Mikor lesz kész?",
