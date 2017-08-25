@@ -59,7 +59,7 @@ const random = function(items) {return items[Math.floor(Math.random() * items.le
 const words = [
     "Átención!",
     "Te tatumatlan paraszt!",
-    "Ő kompromisszumabbképesebb.",
+    "Ő a legkompromisszumabbképesebb.",
     "szilvuplé",
     "ogyanolyan",
     "Umbácsósukáccó",
