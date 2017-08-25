@@ -113,6 +113,7 @@ const words = [
     "igenn...",
     "Difúlt",
     "Difúltból",
-    "Kiírom neked issueba"
+    "Kiírom neked issueba",
+    "Kaúkció",
 ];
 
