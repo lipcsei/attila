@@ -116,6 +116,8 @@ const words = [
     "Kiírom neked issueba",
     "Kaúkció",
     "gyász",
-    "gyáász"
+    "gyáász",
+    "Takonyosra szoptat a Marci...",
+    "taknyosra szoptat",
 ];
 
