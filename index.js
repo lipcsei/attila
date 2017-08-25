@@ -119,7 +119,7 @@ const words = [
     "gyáász",
     "Taknyosra szoptat a Marci...",
     "taknyosra szoptat",
-    "Cigi? Áh. Vodka? Áh. Jéger? Áh. Na jó."
+    "Cigi? Áh. Vodka? Áh. Jéger? Áh. Na jó.",
     "ilyen vagyok...",
 ];
 
