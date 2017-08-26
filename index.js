@@ -121,5 +121,6 @@ const words = [
     "taknyosra szoptat",
     "Cigi? Áh. Vodka? Áh. Jéger? Áh. Na jó.",
     "ilyen vagyok...",
+    "nem árultam zsákbamacskát"
 ];
 
