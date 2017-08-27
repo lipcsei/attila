@@ -123,7 +123,8 @@ const words = [
     "ilyen vagyok...",
     "nem árultam zsákbamacskát",
     "Na meeenj a faszombaa",
-    "ezmiatt..."
-
+    "ezmiatt...",
+    "na szia, te jössz-e ma be?",
+    "jössz-e ma be",
 ];
 
