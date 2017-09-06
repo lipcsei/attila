@@ -1,6 +1,8 @@
 "use strict";
 require("dotenv").config();
 const express = require('express');
+const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
 
 function assertEnv(name) {
     "use strict";
@@ -17,9 +19,14 @@ const clientId = assertEnv("SLACK_CLIENT_ID");
 const clientSecret = assertEnv("SLACK_CLIENT_SECRET");
 const verificationToken = assertEnv("SLACK_VERIFICATION_TOKEN");
 
+const mongoUri = process.env.MONGODB_URI;
+
 const port = process.env.PORT || 8080;
 
 const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(port, () => console.log(`Bot is listening on port ${port}`));
 
@@ -51,7 +58,33 @@ app.get('/oauth', function (req, res) {
 });
 
 app.post('/attila', function (req, res) {
-    res.send({ response_type: "in_channel", text: random(words) });
+    if (mongoUri) {
+        MongoClient.connect(mongoUri, function (err, db) {
+            if (err) throw err;
+
+            if (req.body.text.startsWith('push ')) {
+                var quote = req.body.text.substring(5);
+
+                db.collection('attila', function (err, collection) {
+                    if (err) throw err;
+                    collection.insert({ message: quote });
+
+                    res.send({ response_type: "in_channel", text: "The following awesome quote is added to the db - " + quote });
+                });
+            } else {
+                db.collection('attila', function (err, collection) {
+                    if (err) throw err;
+
+                    collection.find().toArray(function (err, items) {
+                        if (err) throw err;
+                        res.send({ response_type: "in_channel", text: random(items).message });
+                    });
+                });
+            }
+        });
+    } else {
+        res.send({ response_type: "in_channel", text: random(words) });
+    }
 });
 
 const random = function (items) { return items[Math.floor(Math.random() * items.length)] };
